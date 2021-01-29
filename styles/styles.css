@@ -2,24 +2,22 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif:400');
 @import url('reset.css');
 
+
+
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
-    font-size: 100%; /*16px*/
 }
-
-/*
-* {
-    padding: 0px;
-    margin: 0px;
-}
-*/
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
+
+
 
 body {
     font-family: 'Nunito Sans', sans-serif;
