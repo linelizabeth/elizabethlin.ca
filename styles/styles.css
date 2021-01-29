@@ -5,8 +5,12 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
-    font-size: 100%
-        /*16px*/
+    font-size: 100%; /*16px*/
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
 *,
@@ -34,7 +38,7 @@ img {
 p {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
-    margin-bottom: 1rem;
+    /*    margin-bottom: 1rem;*/
 }
 
 h1,
@@ -88,7 +92,7 @@ small,
         ". project-2 project-2 project-2 project-2 project-2 project-2 project-name-2 project-name-2 project-name-2 project-name-2 ."
         ". project-name-3 project-name-3 project-name-3 project-name-3 project-3 project-3 project-3 project-3 project-3 project-3 ."
         "project-4 project-4 project-4 project-4 project-4 project-4 project-name-4 project-name-4 project-name-4 project-name-4 project-name-4 ."
-        ". footer footer footer footer footer footer footer footer footer footer .";
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 
@@ -101,9 +105,9 @@ small,
 }
 */
 
-/* to delete */
 .grid-container * {
     border: solid 1px red;
+    /* to delete */
     width: 100%;
     height: 100%;
 }
@@ -128,7 +132,7 @@ small,
 
 .footer {
     background: orangered;
-/*    min-height: 100vh;*/
+    /*    min-height: 100vh;*/
     display: flex;
     flex-direction: column;
     align-items: center;
