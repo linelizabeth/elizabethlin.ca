@@ -44,7 +44,7 @@ p {
 h1,
 h2,
 h3 {
-    /*    margin: 1.38rem 0 1.38rem;*/
+    margin: 1.38rem 0 1.38rem;
     font-family: 'Bree Serif', serif;
     font-weight: 400;
     line-height: 1.3;
@@ -78,6 +78,11 @@ small,
     font-size: 0.8rem;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 /* CSS Grid */
 .grid-container {
     display: grid;
@@ -98,19 +103,14 @@ small,
 
 /* Layout Styles */
 
-/*
-.header {
-    display: flex;
-    flex-direction: column;
-}
-*/
-
 .grid-container * {
     border: solid 1px red;
     /* to delete */
     width: 100%;
     height: 100%;
 }
+
+/* Holding Page */
 
 .holding-page {
     background: linear-gradient(90deg, rgba(209, 236, 246, 1) 81%, rgba(179, 220, 206, 1) 100%);
@@ -125,6 +125,8 @@ small,
 .holding-page-text {
     color: #013e61;
 }
+
+/* Content */
 
 .project-container {
     background: grey;
