@@ -116,7 +116,7 @@ span {
 /* Layout Styles */
 
 .grid-container * {
-        border: solid 1px red;
+    border: solid 1px red;
     /* to delete */
     width: 100%;
     height: 100%;
@@ -316,7 +316,7 @@ span {
 .about {
     grid-area: about;
     color: white;
-/*
+    /*
     display: grid;
     grid-template-columns: 100vw;
     grid-template-rows: repeat (2, 1fr);
@@ -463,4 +463,37 @@ h1 {
     }
 }
 
+/* Project Page */
+
+.project-page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(20px, 60px) 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "header header header header header header header header header header header header"
+        ". project-detail project-detail project-detail . project-content psroject-content project-content project-content project-content project-content ."
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
+    ;
+}
+
+.project-detail {
+    grid-area: project-detail;
+}
+
+.project-main {
+    grid-area: project-main;
+}
+
+.project-detail-left {
+    grid-area: project-detail-left;
+}
+
+.project-detail-right {
+    grid-area: project-detail-right;
+}
+
+.project-content {
+    grid-area: project-content;
 }
