@@ -327,7 +327,7 @@ span {
 */
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
 }
 
 .about a,
@@ -335,7 +335,6 @@ h1 {
     color: white;
 }
 
-/*
 .connect {
     grid-area: connect;
     display: flex;
@@ -347,11 +346,11 @@ h1 {
     display: flex;
     justify-content: center;
 }
-*/
 
 .marquee {
     grid-area: marquee;
     position: relative;
+    bottom: 0px;
     width: 100vw;
     max-width: 100%;
     height: 100px;
@@ -412,7 +411,7 @@ h1 {
         grid-area: portfolio;
         grid-template-rows: repeat(4, min-content);
         grid-template-areas:
-            ". project-name-1 project-name-1 project-name-1 project-name-1 project-1 project-1 project-1 project-1 project-1 project-1 project-1"
+            ". project-name-1 project-name-1 project-name-1 project-name-1 project-name-1 project-1 project-1 project-1 project-1 project-1 project-1"
             ". project-2 project-2 project-2 project-2 project-2 project-2 project-name-2 project-name-2 project-name-2 project-name-2 ."
             ". project-name-3 project-name-3 project-name-3 project-name-3 project-3 project-3 project-3 project-3 project-3 project-3 ."
             "project-4 project-4 project-4 project-4 project-4 project-4 project-name-4 project-name-4 project-name-4 project-name-4 project-name-4 .";
@@ -450,6 +449,7 @@ h1 {
         grid-area: project-name-3;
         display: flex;
         justify-content: flex-end;
+        text-align: right;
     }
 
     .project-name-4 {
@@ -468,18 +468,28 @@ h1 {
 .project-page-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(20px, 60px) 1fr 1fr;
+    grid-template-rows: minmax(20px, 60px) 1fr 90vh;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
         "header header header header header header header header header header header header"
-        ". project-detail project-detail project-detail . project-content psroject-content project-content project-content project-content project-content ."
+        ". project-detail project-detail project-detail . project-main project-main project-main project-main project-main project-main ."
         "footer footer footer footer footer footer footer footer footer footer footer footer";
-    ;
 }
 
 .project-detail {
     grid-area: project-detail;
+    position: sticky;
+    top: 100px;
+}
+
+.arrow-nav {
+    display: flex;
+}
+
+.fa-angle-double-right,.fa-angle-double-left {
+    padding: 1em 1em 1em 0;
+    margin-right: 2em;
 }
 
 .project-main {
