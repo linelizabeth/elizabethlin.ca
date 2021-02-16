@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="This is Elizabeth Lin's portfolio home page.">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cb89cc4dbd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,7 +17,9 @@
         <section class="header">
             <a href="#" class="topnav-left">Work</a>
             <div class="branding">
-                <a class="logo" href="home.html"><h1>EL.</h1></a>
+                <a class="logo" href="home.html">
+                    <h1>EL.</h1>
+                </a>
             </div>
             <a href="#" class="topnav-right">About</a>
         </section>
@@ -29,38 +31,43 @@
         </section>
 
         <section class="portfolio">
-            <div class="project-container" id="project-1">
-                <div class="project-img-1">
-                    <a href="project-page-1.html"><img src="assets/foodfree.png" alt="food free case study preview"></a>
-                </div>
+            <div class="project-container project-1">
+                <figure class="project-img-1">
+                    <a href="project-page-1.html"><img src="assets/food-free-header.jpg" alt="Food Free Header"></a>
+                </figure>
             </div>
             <div class="project-name project-name-1">
                 <a href="project-page-1.html">
                     <h2>Food • Free</h2>
                 </a>
             </div>
-            <div class="project-container" id="project-2">
-                <a href="#"><img src="assets/annualreport.png" alt="bees for keeps annual report preview"></a>
+            <div class="project-container project-2">
+                <figure class="project-img-2"><a href="#"><img src="assets/annual-report-header.jpg" alt="Bees for Keeps Annual Report Header"></a>
+                </figure>
             </div>
             <div class="project-name project-name-2">
                 <a href="#">
                     <h2>Bees for Keeps Annual Report</h2>
                 </a>
             </div>
-            <div class="project-container" id="project-3">
-                <a href="#"><img src="assets/foodfree.png" alt="introdeuce squamish vocab game preview"></a>
+            <div class="project-container project-3">
+                <figure class="project-img-3">
+                    <a href="#"><img src="assets/coin-financial-app-header.jpg" alt="Coin Financial App Header"></a>
+                </figure>
             </div>
             <div class="project-name project-name-3">
                 <a href="#">
-                    <h2>Introdeuce Squamish Vocab Game</h2>
+                    <h2>Coin Financial App</h2>
                 </a>
             </div>
-            <div class="project-container" id="project-4">
-                <a href="#"><img src="assets/annualreport.png" alt="coin financial app case study preview"></a>
+            <div class="project-container project-4">
+                <figure class="project-img-4">
+                    <a href="#"><img src="assets/introdeuce-header.jpg" alt="Introdeuce Squamish Vocab Game App Header"></a>
+                </figure>
             </div>
             <div class="project-name project-name-4">
                 <a href="#">
-                    <h2>Coin Financial App</h2>
+                    <h2>Introdeuce Squamish Vocab Game</h2>
                 </a>
             </div>
 
@@ -73,18 +80,20 @@
                     <h2>hello@elizabethlin.ca</h2>
                 </a>
             </div>
-            <section class="marquee">
+            <div class="marquee">
                 <div class="track">
-                    <a class="ticker__item" href="#">Wildewater</a>
-                    <a class="ticker__item" href="#">Type Unwrapped</a>
-                    <a class="ticker__item" href="#">Neueme</a>
-                    <a class="ticker__item" href="#">Type Friends</a>
-                    <a class="ticker__item" href="#">Coinhub</a>
-                    <a class="ticker__item" href="#">Capstone</a>
-                    <a class="ticker__item" href="#">Wildewater</a>
-                    <a class="ticker__item" href="#">Wildewater</a>
+                    <div class="content">
+                        <a class="ticker__item" href="project-page-1.html">Food • Free</a>
+                        <a class="ticker__item" href="#">Bees for Keeps</a>
+                        <a class="ticker__item" href="#">Coin</a>
+                        <a class="ticker__item" href="#">Introdeuce</a>
+                        <a class="ticker__item" href="project-page-1.html">Food • Free</a>
+                        <a class="ticker__item" href="#">Bees for Keeps</a>
+                        <a class="ticker__item" href="#">Coin</a>
+                        <a class="ticker__item" href="#">Introdeuce</a>
+                    </div>
                 </div>
-            </section>
+            </div>
         </footer>
 
     </div>

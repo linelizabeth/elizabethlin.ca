@@ -95,13 +95,14 @@ strong {
 
 span {
     display: block;
+    padding: 10px 0;
 }
 
 /* CSS Grid */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content minmax(70vh, 90vh) min-content 90vh;
+    grid-template-rows: auto minmax(70vh, 90vh) auto 90vh;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
@@ -112,29 +113,79 @@ span {
 }
 
 
-/* Layout Styles */
-
-.grid-container * {
-    /*    border: solid 1px red;*/
-    /* to delete */
-    width: 100%;
-    height: 100%;
-}
-
 /* Holding Page */
 
-.holding-page {
-    background: linear-gradient(90deg, rgba(209, 236, 246, 1) 81%, rgba(179, 220, 206, 1) 100%);
-    min-height: 100vh;
+.banner {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    width: 100%;
 }
 
-.holding-page-text {
-    color: #013e61;
+.typed_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EE6352;
 }
+
+.typed_wrap h1 {
+    display: inline;
+}
+
+/*Add custom cursor so it auto inherits font styles*/
+.typewriter::after {
+    content: '|';
+    display: inline;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+/*Custom cursor animation*/
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /* Content */
 
@@ -144,7 +195,7 @@ span {
     grid-area: header;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content;
+    grid-template-rows: auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
@@ -152,8 +203,11 @@ span {
     align-items: center;
     position: sticky;
     top: 0px;
-    color: #0D3040;
     /*    background-color: #f5f5ed;*/
+}
+
+.header a {
+    color: #EE6352;
 }
 
 .topnav-left {
@@ -167,12 +221,12 @@ span {
     grid-area: branding;
 }
 
-.logo h1{
+.logo h1 {
     grid-area: logo;
     display: flex;
     justify-content: center;
-    color: #0D3040;
-    padding: 20px 0;
+    color: #EE6352;
+    padding: 15px 0;
 }
 
 .topnav-right {
@@ -221,10 +275,6 @@ span {
     margin-top: 2rem;
 }
 
-#hero-span {
-    margin-top: 1rem;
-}
-
 /* Portfolio */
 
 .portfolio {
@@ -246,48 +296,29 @@ span {
 }
 
 .project-container {
-    padding-top: 3.5rem;
+    padding-top: 3rem;
 }
 
-/*
-.project-description-overlay {
-    display: none;
-}
-
-.project-container:hover .project-description-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.80);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-*/
-
-#project-1 {
+.project-1 {
     grid-area: project-1;
     padding-top: 2em;
 }
 
-#project-2 {
+.project-2 {
     grid-area: project-2;
 }
 
-#project-3 {
+.project-3 {
     grid-area: project-3;
 }
 
-#project-4 {
+.project-4 {
     grid-area: project-4;
+    margin-bottom: 2em;
 }
 
-.project-name h2 {
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
+.project-name {
+    margin: 1.5em 2em;
 }
 
 .project-name-1 {
@@ -306,6 +337,104 @@ span {
     grid-area: project-name-4;
 }
 
+
+/* Project Page */
+
+.project-page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr 90vh;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "header header header header header header header header header header header header"
+        "project-body project-body project-body project-body project-body project-body project-body project-body project-body project-body project-body project-body"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.project-body {
+    grid-area: project-body;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        ". project-detail project-detail project-detail project-detail project-detail project-detail project-detail project-detail project-detail project-detail ."
+        ". project-main project-main project-main project-main project-main project-main project-main project-main project-main project-main ."
+        ". arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom arrow-nav-bottom .";
+    margin: 4em 0;
+}
+
+.project-body p {
+    padding: 1em 0;
+}
+
+.project-detail {
+    grid-area: project-detail;
+}
+
+.prototype-link {
+    color: #EE6352;
+    text-decoration: overline;
+    font-size: 1rem;
+}
+
+.prototype-link:visited {
+    color: #EE6352;
+}
+
+.prototype-link:hover {
+    color: #0D3040;
+}
+
+.arrow-nav-top {
+    display: none;
+}
+
+.fa-angle-double-left {
+    padding: 1em 1em 0 0;
+    margin-right: 0.3em;
+}
+
+.fa-angle-double-right {
+    padding-top: 1em;
+    margin-right: 0.3em;
+}
+
+.arrow-nav-bottom {
+    grid-area: arrow-nav-bottom;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-main {
+    grid-area: project-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "project-detail-left"
+        "project-detail-right"
+        "project-content";
+}
+
+.project-detail-left {
+    grid-area: project-detail-left;
+    margin-top: 2em;
+}
+
+.project-detail-right {
+    grid-area: project-detail-right;
+    margin-top: 2em;
+}
+
+.project-content {
+    grid-area: project-content;
+}
+
 /* Footer */
 
 .footer {
@@ -313,56 +442,54 @@ span {
     background: #265d77;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-template-areas:
         ". about about about about about about about about about about ."
         "marquee marquee marquee marquee marquee marquee marquee marquee marquee marquee marquee marquee";
+    align-items: flex-end;
 }
 
 .about {
     grid-area: about;
     color: white;
-    /*
     display: grid;
-    grid-template-columns: 100vw;
+    grid-template-columns: 90vw;
     grid-template-rows: repeat (2, 1fr);
-    grid-template-areas: 
+    grid-template-areas:
         "connect"
         "email";
-    justify-items: center;
-*/
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-}
-
-.about a,
-h1 {
-    color: white;
+    align-content: center;
+    /*    margin-top: 40vh;*/
 }
 
 .connect {
     grid-area: connect;
     display: flex;
     justify-content: center;
+    margin: 1rem 0;
+    font-size: 1.4rem;
 }
 
 .email h2 {
     grid-area: email;
+    color: white;
     display: flex;
     justify-content: center;
+    margin: 1rem 0;
+    font-size: 1.8rem;
 }
 
 .marquee {
     grid-area: marquee;
     position: relative;
-    bottom: 0px;
     width: 100vw;
-    max-width: 100%;
-    height: 100px;
+    height: 10vh;
     overflow-x: hidden;
-    font-size: 40px;
+    font-size: 1.8rem;
     background-color: #f5f5ed;
+    display: flex;
+    align-items: center;
 }
 
 .track {
@@ -370,6 +497,17 @@ h1 {
     white-space: nowrap;
     will-change: transform;
     animation: marquee 30s linear infinite;
+}
+
+.content {
+    display: flex;
+}
+
+.ticker__item {
+    width: auto;
+    margin: 0 1em;
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes marquee {
@@ -382,10 +520,264 @@ h1 {
     }
 }
 
+.typewriter:after {
+    content: '';
+    animation: write 15s linear infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes write {
+    1% {
+        content: 'E';
+    }
+
+    2% {
+        content: 'El';
+    }
+
+    3% {
+        content: 'Eliz';
+    }
+
+    4% {
+        content: 'Eliza';
+    }
+
+    5% {
+        content: 'Elizabe';
+    }
+
+    6% {
+        content: 'Elizabeth';
+    }
+
+    7% {
+        content: 'Elizabeth L';
+    }
+
+    8% {
+        content: 'Elizabeth Li';
+    }
+
+    9% {
+        content: 'Elizabeth Lin';
+    }
+
+    14% {
+        content: 'Elizabeth Lin';
+    }
+
+    14.5% {
+        content: 'Elizabeth Li';
+    }
+
+    15% {
+        content: 'Elizabeth L';
+    }
+
+    15.5% {
+        content: 'Elizabeth';
+    }
+
+    16% {
+        content: 'Elizab';
+    }
+
+    16.5% {
+        content: 'Eliz';
+    }
+
+    17% {
+        content: 'El';
+    }
+
+    17.5% {
+        content: 'E';
+    }
+
+    18% {
+        content: '';
+    }
+
+    20% {
+        content: 'S';
+    }
+
+    21% {
+        content: 'Su';
+    }
+
+    22% {
+        content: 'Sum';
+    }
+
+    23% {
+        content: 'Summ';
+    }
+
+    24% {
+        content: 'Summe';
+    }
+
+    25% {
+        content: 'Summer ';
+    }
+
+    26% {
+        content: 'Summer 20';
+    }
+
+    27% {
+        content: 'Summer 202';
+    }
+
+    28% {
+        content: 'Summer 2020';
+    }
+
+    34% {
+        content: 'Summer 2020';
+    }
+
+    35.5% {
+        content: 'Summer 202';
+    }
+
+    36% {
+        content: 'Summer 2';
+    }
+
+    36.5% {
+        content: 'Summer';
+    }
+
+    37% {
+        content: 'Summe';
+    }
+
+    37.5% {
+        content: 'Summ';
+    }
+
+    38% {
+        content: 'Sum';
+    }
+
+    38.5% {
+        content: 'Su';
+    }
+
+    39% {
+        content: 'S';
+    }
+
+    39.5% {
+        content: '';
+    }
+
+    42% {
+        content: 'C';
+    }
+
+    43% {
+        content: 'Co';
+    }
+
+    44% {
+        content: 'Com';
+    }
+
+    45% {
+        content: 'Comi';
+    }
+
+    46% {
+        content: 'Comin';
+    }
+
+    47% {
+        content: 'Coming';
+    }
+
+    48% {
+        content: 'Coming S';
+    }
+
+    49% {
+        content: 'Coming So';
+    }
+
+    50% {
+        content: 'Coming Soon';
+    }
+
+    60% {
+        content: 'Coming Soon';
+    }
+
+    61% {
+        content: 'Coming So';
+    }
+
+    62% {
+        content: 'Coming S';
+    }
+
+    63% {
+        content: 'Coming';
+    }
+
+    64% {
+        content: 'Comi';
+    }
+
+    65% {
+        content: 'Co';
+    }
+
+    66% {
+        content: 'C';
+    }
+
+    67% {
+        content: '';
+    }
+
+    70% {
+        content: ':';
+    }
+
+    74% {
+        content: ':D';
+    }
+    
+    87% {
+        content: ':';
+    }
+    
+    88% {
+        content: '';
+    }
+
+    99% {
+        content: '';
+    }
+
+    100% {
+        content: '';
+    }
+}
+
+
 /* Responsive Web */
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at thfis breakpoint */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .email h2 {
+        font-size: 3rem;
+    }
+
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -416,6 +808,7 @@ h1 {
     .portfolio {
         grid-area: portfolio;
         grid-template-rows: repeat(4, min-content);
+        grid-row-gap: 3em;
         grid-template-areas:
             ". project-name-1 project-name-1 project-name-1 project-name-1 project-name-1 project-1 project-1 project-1 project-1 project-1 project-1"
             ". project-2 project-2 project-2 project-2 project-2 project-2 project-name-2 project-name-2 project-name-2 project-name-2 ."
@@ -423,26 +816,21 @@ h1 {
             "project-4 project-4 project-4 project-4 project-4 project-4 project-name-4 project-name-4 project-name-4 project-name-4 project-name-4 .";
     }
 
-    /*
-    .project-description-overlay {
-        display: grid;
-    }
-*/
-
-    .project-container {
-        padding-top: 4em;
+    .project-name {
+        display: flex;
+        align-items: flex-end;
+        margin: 1rem 3rem;
     }
 
     .project-name h2 {
-        display: flex;
-        align-items: flex-end;
-        padding: 1rem;
+        padding: 0;
     }
 
     .project-name-1 {
         grid-area: project-name-1;
         display: flex;
         justify-content: flex-end;
+        text-align: right;
     }
 
     .project-name-2 {
@@ -464,53 +852,46 @@ h1 {
         justify-content: flex-start;
     }
 
-    .about h2 {
-        font-size: 6rem;
+    .project-body {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            ". project-detail project-detail project-detail . project-main project-main project-main project-main project-main project-main .";
+        margin-top: 7em;
+        margin-bottom: 4em;
     }
-}
 
-/* Project Page */
+    .project-detail {
+        position: sticky;
+        top: 25vh;
+        max-height: 100vh;
+    }
 
-.project-page-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(20px, 60px) 1fr 90vh;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    grid-template-areas:
-        "header header header header header header header header header header header header"
-        ". project-detail project-detail project-detail . project-main project-main project-main project-main project-main project-main ."
-        "footer footer footer footer footer footer footer footer footer footer footer footer";
-}
+    .arrow-nav-top {
+        display: flex;
+    }
 
-.project-detail {
-    grid-area: project-detail;
-    position: sticky;
-    top: 100px;
-}
+    .arrow-nav-bottom {
+        display: none;
+    }
 
-.arrow-nav {
-    display: flex;
-}
+    .project-main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-column-gap: 2em;
+        grid-template-areas:
+            "project-detail-left project-detail-right"
+            "project-content project-content";
+    }
 
-.fa-angle-double-right,
-.fa-angle-double-left {
-    padding: 1em 1em 1em 0;
-    margin-right: 2em;
-}
+    .project-detail-left,
+    .project-detail-right,
+    .project-content {
+        margin-top: 0;
+    }
 
-.project-main {
-    grid-area: project-main;
-}
-
-.project-detail-left {
-    grid-area: project-detail-left;
-}
-
-.project-detail-right {
-    grid-area: project-detail-right;
-}
-
-.project-content {
-    grid-area: project-content;
+    .about h2 {
+        font-size: 4.3rem;
+    }
 }
